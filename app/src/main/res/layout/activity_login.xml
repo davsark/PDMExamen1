@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pantallaLogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    tools:context=".LoginActivity"
+    >
+    <ImageView
+        android:id="@+id/ivLogoLogin"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/programador_martillo"
+        android:contentDescription="@string/app_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicio de sesión"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Usuario"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/campoUsuarioLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Inserte usuario"
+        android:inputType="text"
+        />
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Contraseña"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/campoContraLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Inserte contraseña"
+        android:inputType="textPassword"
+        />
+    <Button
+        android:id="@+id/btnIniciarSesionLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Iniciar Sesion"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="o"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnRegistrarseLogin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textSize="16sp"
+        />
+</LinearLayout>

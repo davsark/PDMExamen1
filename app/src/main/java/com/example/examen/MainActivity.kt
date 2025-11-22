@@ -1,8 +1,10 @@
 package com.example.examen
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -47,6 +49,24 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        // Configurar listeners de los botones
+        configurarBotones()
+    }
+    private fun configurarBotones() {
+        // Botón Iniciar Sesión - Navegar a LoginActivity
+        binding.btnIniciarSesionMain.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Botón Registrarse - Mostrar Toast
+        binding.btnRegistrarseMain.setOnClickListener {
+            Toast.makeText(
+                this,
+                "Función no implementada",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }
