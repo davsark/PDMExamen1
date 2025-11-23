@@ -7,9 +7,30 @@
     tools:context=".HomeActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewProductos"
+        android:id="@+id/recyclerViewProductosHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:scrollbars="horizontal" />
+
+    <TextView
+        android:id="@+id/tvTituloCestaHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerViewProductosHome"
+        android:text="Mi Cesta"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <!-- RECYCLERVIEW VERTICAL: Productos en la cesta -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCestaHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvTituloCestaHome"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 </RelativeLayout>

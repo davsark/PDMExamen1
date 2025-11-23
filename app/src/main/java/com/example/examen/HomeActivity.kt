@@ -1,4 +1,6 @@
+
 package com.example.examen
+
 
 import android.app.Activity
 import android.os.Bundle
@@ -9,16 +11,20 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.examen.databinding.ActivityHomeBinding
 
+
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+
         // Inicializar ViewBinding
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         // Ajuste de bordes para EdgeToEdge
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
@@ -42,8 +48,9 @@ class HomeActivity : AppCompatActivity() {
         // 2. Crear el adaptador pasándole la lista
         val adapter = ProductoAdapter(listaProductos)
 
+
         // 3. Configurar el RecyclerView
-        binding.recyclerViewProductos.apply {
+        binding.recyclerViewProductosHome.apply {
             // LinearLayoutManager HORIZONTAL: scroll de izquierda a derecha
             layoutManager = LinearLayoutManager(
                 this@HomeActivity,
@@ -54,5 +61,5 @@ class HomeActivity : AppCompatActivity() {
             this.adapter = adapter
         }
     }
-
 }
+
