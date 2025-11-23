@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.examen.databinding.CardProductoBinding
 
 class ProductoAdapter(
-    private val listaProductos: List<Producto>
+    private val listaProductos: List<Producto>,
+    private val onAñadirClick: (Producto) -> Unit
 ) : RecyclerView.Adapter<ProductoAdapter.ProductoViewHolder>() {
 
     // ViewHolder usando ViewBinding
@@ -34,6 +35,7 @@ class ProductoAdapter(
 
             // Listener para el botón de carrito
             carritoCard.setOnClickListener {
+                onAñadirClick(producto)
                 Toast.makeText(
                     root.context,
                     "Añadido: ${producto.titulo}",

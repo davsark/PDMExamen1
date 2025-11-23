@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.examen.databinding.CardProductoCestaBinding
 
 class CestaAdapter(
-    private val listaProductos: List<Producto>  // ← Usa Producto, no ProductoCesta
+    private val listaProductos: List<Producto>,  // ← Usa Producto, no ProductoCesta
+    private val onAumentar: (Int) -> Unit,   // ← Recibe la posición
+    private val onDisminuir: (Int) -> Unit,  // ← Recibe la posición
+    private val onEliminar: (Int) -> Unit    // ← Recibe la posición
 ) : RecyclerView.Adapter<CestaAdapter.CestaViewHolder>() {
 
     class CestaViewHolder(val binding: CardProductoCestaBinding) : RecyclerView.ViewHolder(binding.root)
@@ -34,18 +37,28 @@ class CestaAdapter(
 
             // Listeners de los botones (sin funcionalidad por ahora)
             btnDisminuirCesta.setOnClickListener {
-                Toast.makeText(root.context, "Disminuir: ${producto.titulo}", Toast.LENGTH_SHORT).show()
+                val posReal = holder.bindingAdapterPosition
+                if (posReal != RecyclerView.NO_POSITION) {
+                    onDisminuir(posReal)
+                }
             }
 
             btnAumentarCesta.setOnClickListener {
-                Toast.makeText(root.context, "Aumentar: ${producto.titulo}", Toast.LENGTH_SHORT).show()
+                val posReal = holder.bindingAdapterPosition
+                if (posReal != RecyclerView.NO_POSITION) {
+                    onAumentar(posReal)
+                }
             }
 
             btnEliminarCesta.setOnClickListener {
-                Toast.makeText(root.context, "Eliminar: ${producto.titulo}", Toast.LENGTH_SHORT).show()
+                val posReal = holder.bindingAdapterPosition
+                if (posReal != RecyclerView.NO_POSITION) {
+                    onEliminar(posReal)
+                }
             }
         }
     }
-
     override fun getItemCount(): Int = listaProductos.size
 }
+
+
