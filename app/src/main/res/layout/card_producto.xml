@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_alignParentTop="true"
-            android:scaleType="fitCenter"
             android:src="@drawable/chanchito"
             android:contentDescription="Imagen del producto" />
 
@@ -76,7 +75,7 @@
                 android:src="@drawable/ic_shopping_cart_24"
                 android:contentDescription="Acción"
                 android:padding="8dp"
-                android:background="none"
+                android:background="@android:color/transparent"
                 />
         </LinearLayout>
     </RelativeLayout>

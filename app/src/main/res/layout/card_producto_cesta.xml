@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardProductoCesta"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp">
+
+        <!-- NOMBRE del producto (izquierda) -->
+        <TextView
+            android:id="@+id/tvNombreCestaCesta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Nombre del producto"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingEnd="8dp" />
+
+        <!-- CONTROLES DE CANTIDAD (centro) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+
+            <!-- Botón DISMINUIR cantidad -->
+            <ImageButton
+                android:id="@+id/btnDisminuirCesta"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_restar_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:contentDescription="Disminuir cantidad"
+                android:padding="4dp" />
+
+            <!-- CANTIDAD actual -->
+            <TextView
+                android:id="@+id/tvCantidadCesta"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:gravity="center"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp" />
+
+            <!-- Botón AUMENTAR cantidad -->
+            <ImageButton
+                android:id="@+id/btnAumentarCesta"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_sumar_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:contentDescription="Aumentar cantidad"
+                android:padding="4dp" />
+
+        </LinearLayout>
+
+        <!-- PRECIO (derecha) -->
+        <TextView
+            android:id="@+id/tvPrecioCesta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15.99 €"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#4CAF50"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- ICONO ELIMINAR (derecha del todo) -->
+        <ImageButton
+            android:id="@+id/btnEliminarCesta"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:contentDescription="Eliminar producto"
+            android:padding="6dp"
+            app:tint="#F44336" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
